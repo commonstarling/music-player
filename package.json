@@ -3,6 +3,8 @@
     "cors": "^2.8.4",
     "express": "^4.16.1",
     "howler": "^2.0.5",
+    "node-internet-radio": "^0.1.5",
+    "radio-song": "^0.1.8",
     "request": "^2.83.0"
   }
 }

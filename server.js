@@ -4,11 +4,14 @@ var cors = require('cors');
 var request = require('request');
 var http = require('http');
 var path = require('path');
+var internetradio = require('node-internet-radio');
 
 app.use(express.static(__dirname + '/public'));
 app.use(cors());
 
 var port = 3000;
+
+var testStream = 'http://us3.internet-radio.com:8007';
 
 app.listen(port, function() {
   console.log('Listening on port ' + port);
@@ -19,13 +22,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/currentSong', cors(), function(req, res) {
-  http
-    .get('http://96.31.83.86:8091/played.html/', function(res) {
-      res.on('error', function(err) {
-        console.log('res error', err);
-      });
-    })
-    .on('error', function(err) {
-      console.log('req error', err);
-    });
+  internetradio.getStationInfo(testStream, function(error, station) {
+    console.log(station);
+    res.send(station.title);
+  });
 });

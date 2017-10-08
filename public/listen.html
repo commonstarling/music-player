@@ -9,14 +9,13 @@
   <script src="https://use.fontawesome.com/ee6ae2c63c.js"></script>
   <script src="app.js"></script>
 </head>
-<body ng-controller="RadioController">
+<body ng-controller="RadioController" data-ng-init="init()">
   <div style="margin: 0 auto;">
     <img src="https://static1.squarespace.com/static/58ce9c24e6f2e19aff8c4bdf/t/59be732dcd39c38fc5737d25/1505653589673/Screen+Shot+2017-09-17+at+8.51.20+AM.png" style="width:75%;">
   </div>
-  <h4>{{song}}</h4>
+  <h4>Now playing: {{song}}</h4>
   <i class="fa fa-play-circle-o fa-3x" onclick="sound.play()"></i>
   <i class="fa fa-pause-circle-o fa-3x" onclick="sound.stop()"></i>
-  <button ng-click="getSong()">test</button>
   <script>
     var sound = new Howl({
       src: ['http://us3.internet-radio.com:8007/;'],
@@ -26,9 +25,6 @@
       loop: true,
       volume: .1,
     });
-
   </script>
-
 </body>
 </html>
-
