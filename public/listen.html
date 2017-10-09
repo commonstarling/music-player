@@ -15,22 +15,12 @@
   </div>
   <h3 style="font-family:Arial,Helvetica,sans-serif"><span style="color:#B83D37">Now playing:</span> {{song}}</h3>
   <i class="fa fa-play-circle-o fa-5x"
-     onclick="sound.mute(false)"
+     ng-click="play()"
      onMouseOver="this.style.color='#B83D37'"
      onMouseOut="this.style.color='#000'"></i>
   <i class="fa fa-pause-circle-o fa-5x"
-     onclick="sound.mute(true)"
+     ng-click="pause()"
      onMouseOver="this.style.color='#B83D37'"
      onMouseOut="this.style.color='#000'"></i>
-  <script>
-    var sound = new Howl({
-      src: ['http://96.31.83.86:8091/;'],
-      format: ['mpeg'],
-      autoplay: true,
-      mobileAutoEnable: true,
-      loop: true,
-      volume: .8,
-    });
-  </script>
 </body>
 </html>
