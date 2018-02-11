@@ -32,17 +32,14 @@ radioApp.controller('RadioController', function RadioController($scope, $http) {
   };
 
   $scope.play = function() {
-    if (sound._muted === true) {
-      console.log('unmuted');
+    if (sound._muted) {
       sound.mute(false);
-    } else {
-      console.log('press play');
+    } else if (!sound._muted && !sound.playing()) {
       sound.play();
     }
   };
 
   $scope.pause = function() {
     sound.mute(true);
-    console.log(sound);
   };
 });
