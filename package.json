@@ -1,10 +1,25 @@
 {
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "Radio Harbor Country internet radio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Sheena Ramirez",
+  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.4",
-    "express": "^4.16.1",
-    "howler": "^2.0.5",
-    "node-internet-radio": "^0.1.5",
-    "radio-song": "^0.1.8",
-    "request": "^2.83.0"
-  }
+    "express": "^4.16.2",
+    "howler": "^2.0.9",
+    "node-internet-radio": "^0.1.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commonstarling/music-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/commonstarling/music-player/issues"
+  },
+  "homepage": "https://github.com/commonstarling/music-player#readme"
 }

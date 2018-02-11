@@ -4,9 +4,9 @@ radioApp.controller('RadioController', function RadioController($scope, $http) {
   $scope.song = 'test';
 
   var sound = new Howl({
-    src: ['http://96.31.83.86:8091/;'],
+    src: ['http://96.31.83.94:8136/stream'],
     format: ['mpeg'],
-    autoplay: true,
+    autoplay: false,
     html5: true,
     mobileAutoEnable: true,
     loop: true,
@@ -16,14 +16,14 @@ radioApp.controller('RadioController', function RadioController($scope, $http) {
 
   $scope.init = function() {
     function getRequest() {
-      $http.get('/currentSong').then(
-        function(res) {
+      $http
+        .get('/currentSong')
+        .then(function(res) {
           $scope.song = res.data;
-        },
-        function(error) {
-          console.error(error);
-        }
-      );
+        })
+        .catch(function() {
+          $scope.song = 'Radio Harbor Country Live Stream';
+        });
     }
     getRequest();
     setInterval(function() {
