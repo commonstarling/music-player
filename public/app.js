@@ -19,7 +19,11 @@ radioApp.controller('RadioController', function RadioController($scope, $http) {
       $http
         .get('/currentSong')
         .then(function(res) {
-          $scope.song = res.data;
+          let songTitle = 'Radio Harbor Country Live Stream';
+          if (res.data && res.data.length) {
+            songTitle = res.data;
+          }
+          $scope.song = songTitle;
         })
         .catch(function() {
           $scope.song = 'Radio Harbor Country Live Stream';
