@@ -1,7 +1,7 @@
 var radioApp = angular.module('radioApp', []);
 
 radioApp.controller('RadioController', function RadioController($scope, $http) {
-  $scope.song = 'test';
+  $scope.song = 'Radio Harbor Country Live Stream';
 
   var sound = new Howl({
     src: ['http://96.31.83.94:8136/stream'],
